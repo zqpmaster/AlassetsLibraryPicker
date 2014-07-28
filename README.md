@@ -4,11 +4,6 @@ AlassetsLibraryPicker
 - (void)alImagePickerController:(ALImagePicker *)picker didFinishPickingMediaWithInfo:(NSArray *)info fromGroup:(ALAssetsGroup *)group{
     self.assets=info;
     NSString *groupName=[group valueForProperty:ALAssetsGroupPropertyName];
-    if (group==nil) {
-        groupName=@"全部照片";
-    }
-    [_headerView setLabelPhotoCount:info.count photoGroupName:groupName];
-    collectionViewIsFirstRefrshShouldSlow=YES;
     [self.collectionView reloadData];
 }
 </pre></code> 
