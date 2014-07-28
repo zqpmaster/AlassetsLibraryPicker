@@ -8,9 +8,8 @@ AlassetsLibraryPicker
 }
 </pre></code> 
 <pre><code> 
-- (void)alImagePickerController:(ALImagePicker *)picker DidFinshPickGroups:(NSArray *)groups{
-     _groupTableVC.alGroupsInfo=groups;
-     [_groupTableVC.tableView reloadData];
+- (void)alImagePickerController:(ALImagePicker *)picker DidFinshPickGroups:(NSArray *)groups{             _groupTableVC.alGroupsInfo=groups;
+ [_groupTableVC.tableView reloadData];
 }
 </pre></code> 
 
