@@ -19,7 +19,6 @@ AlassetsLibraryPicker
 }
 </pre></code> 
 
-////
 
 <pre><code> 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -34,15 +33,11 @@ AlassetsLibraryPicker
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupVCCell" forIndexPath:indexPath];
-    
-        ALAssetsGroup *group=self.alGroupsInfo[indexPath.row];
-        
-        NSInteger number=[group numberOfAssets];
-        NSString *nameSt=[group valueForProperty:ALAssetsGroupPropertyName];
-        string=[nameSt stringByAppendingFormat:@"(%ld张)",(long)number];
-    
+    ALAssetsGroup *group=self.alGroupsInfo[indexPath.row];
+    NSInteger number=[group numberOfAssets];
+    NSString *nameSt=[group valueForProperty:ALAssetsGroupPropertyName];
+    string=[nameSt stringByAppendingFormat:@"(%ld张)",(long)number];
     [cell.label setText:string];
-    
     return cell;
 }
 </pre></code> 
