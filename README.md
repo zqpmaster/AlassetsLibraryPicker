@@ -1,5 +1,6 @@
 AlassetsLibraryPicker
 =====================
+代码示例
 <pre><code> 
 - (void)alImagePickerController:(ALImagePicker *)picker didFinishPickingMediaWithInfo:(NSArray *)info fromGroup:(ALAssetsGroup *)group{
     self.assets=info;
