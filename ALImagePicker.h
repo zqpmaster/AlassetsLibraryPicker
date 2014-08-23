@@ -1,9 +1,7 @@
 //
 //  ALImagePicker.h
-//  LOFTERCam
 //
 //  Created by ZQP on 14-7-8.
-//  Copyright (c) 2014年 Netease. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,7 +11,7 @@
 
 @protocol ALImagePickerDelegate <NSObject>
 
-@required;
+@optional;
 - (void)alImagePickerController:(ALImagePicker *)picker didFinishPickingMediaWithInfo:(NSArray *)info fromGroup:(ALAssetsGroup*)group;//如果group为nil，为所有照片
 - (void)alImagePickerController:(ALImagePicker *)picker DidFinshPickGroups:(NSArray*)groups;
 
@@ -29,9 +27,11 @@
 //@property (strong) ALAssetsGroup *assetsGroup;
 @property (weak,nonatomic)id<ALImagePickerDelegate>delegate;
 
-
 - (void)loadAssetsGroups;//完成后会执行代理方法DidFinshPickGroups
 - (void)loadAllAssets;//完成后会执行代理方法didFinishPickingMediaWithInfo
-- (void)loadassetsForGroup:(ALAssetsGroup*)group;//完成后会执行代理方法didFinishPickingMediaWithInfo
+- (void)loadassetsForGroup:(ALAssetsGroup*)group isFilter:(BOOL)isFilter;//完成后会执行代理方法didFinishPickingMediaWithInfo
+- (void)loadAssetsForGroupWithName:(NSString *)namel;
+- (NSInteger)countOfTheGroup:(ALAssetsGroup*)group;
 
+-(void)deleteAsset:(ALAsset*)asset;
 @end
